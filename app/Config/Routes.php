@@ -32,3 +32,10 @@ $routes->get('/', 'Home::index');
  $routes->resource('leave');
  $routes->resource('payroll');
  $routes->resource('performanceevaluation');
+
+ $routes->resource('report');
+ $routes->resource('employeecard');
+ $routes->resource('publicemployeeprofile');
+ $routes->resource('employeecertificate');
+ $routes->resource('trainingcertificate');
+ $routes->resource('timesheet');
