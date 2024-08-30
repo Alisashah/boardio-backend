@@ -81,3 +81,9 @@ $routes->get('/', 'Home::index');
       $routes->post('google', 'Meeting::createGoogleMeet');
       });
      
+
+      $routes->resource('onboarding');
+      $routes->group('smtpconfig', function ($routes) {
+         $routes->get('/', 'SMTPConfig::index');
+         $routes->post('update', 'SMTPConfig::update');
+         });
