@@ -42,6 +42,9 @@
             'position' => $this->request->getVar('position'),
             'photo'=> $this->request->getVar('photo'),
             'documents' => $this->request->getVar('documents'),
+            'linkedin' => $this->request->getVar('linkedin'),
+            'facebook' => $this->request->getVar('facebook'),
+            'instagram' => $this->request->getVar('instagram'),
         ];
         $this->model->save($data);
         return $this->respondCreated($data);
@@ -57,6 +60,9 @@
             'photo'
             => $this->request->getVar('photo'),
             'documents' => $this->request->getVar('documents'),
+            'linkedin' => $this->request->getVar('linkedin'),
+            'facebook' => $this->request->getVar('facebook'),
+            'instagram' => $this->request->getVar('instagram'),
         ];
         $this->model->update($id, $data);
         return $this->respond($data);

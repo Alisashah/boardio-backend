@@ -1,13 +1,12 @@
 <?php
  namespace App\Models;
  use CodeIgniter\Model;
- class EmployeeModel extends Model
+ class FormModel extends Model
  {
- protected $table = 'employees';
+ protected $table = 'forms';
  protected $primaryKey = 'id';
- protected $allowedFields = ['name', 'email', 'phone',
- 'department', 'position', 'photo', 'documents', 'linkedin',
- 'facebook', 'instagram'];
+ protected $allowedFields = ['title', 'description', 'fields',
+ 'created_by'];
  protected $useTimestamps = true;
  protected $createdField = 'created_at';
  protected $updatedField = 'updated_at';

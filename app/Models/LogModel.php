@@ -1,15 +1,14 @@
 <?php
  namespace App\Models;
  use CodeIgniter\Model;
- class EmployeeModel extends Model
+ class LogModel extends Model
  {
- protected $table = 'employees';
+ protected $table = 'logs';
  protected $primaryKey = 'id';
- protected $allowedFields = ['name', 'email', 'phone',
- 'department', 'position', 'photo', 'documents', 'linkedin',
- 'facebook', 'instagram'];
+ protected $allowedFields = ['employee_id', 'log_type',
+ 'timestamp'];
  protected $useTimestamps = true;
- protected $createdField = 'created_at';
+protected $createdField = 'created_at';
  protected $updatedField = 'updated_at';
  protected $deletedField = 'deleted_at';
  protected $returnType = 'array';

@@ -1,13 +1,12 @@
 <?php
  namespace App\Models;
  use CodeIgniter\Model;
- class EmployeeModel extends Model
+ class SubscriptionModel extends Model
  {
- protected $table = 'employees';
+ protected $table = 'subscriptions';
  protected $primaryKey = 'id';
- protected $allowedFields = ['name', 'email', 'phone',
- 'department', 'position', 'photo', 'documents', 'linkedin',
- 'facebook', 'instagram'];
+ protected $allowedFields = ['tenant_id', 'plan_name', 'price',
+ 'start_date', 'end_date', 'status'];
  protected $useTimestamps = true;
  protected $createdField = 'created_at';
  protected $updatedField = 'updated_at';
