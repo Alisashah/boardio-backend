@@ -87,3 +87,36 @@ $routes->get('/', 'Home::index');
          $routes->get('/', 'SMTPConfig::index');
          $routes->post('update', 'SMTPConfig::update');
          });
+
+         $routes->resource('client');
+
+         $routes->group('clientportal', function ($routes) {
+            $routes->get('projects/(:num)',
+            'ClientPortal::getClientProjects/$1');
+            $routes->post('task/(:num)', 'ClientPortal::addClientTask/$1');
+            $routes->post('files/(:num)', 'ClientPortal::shareFiles/$1');
+            });
+            $routes->resource('ticket');
+            $routes->group('externalticket', function ($routes) {
+               $routes->post('create',
+               'ExternalTicket::createExternalTicket');
+               $routes->get('all', 'ExternalTicket::getExternalTickets');
+               });           
+
+
+         $routes->group('importexport', function ($routes) {
+            $routes->get('export/employees',
+            'ImportExport::exportEmployees');
+            $routes->post('import/employees',
+            'ImportExport::importEmployees');
+            });
+
+
+            $routes->resource('superadmin');
+ $routes->post('superadmin/resetpassword/(:num)',
+ 'SuperAdmin::resetPassword/$1');
+ $routes->post('superadmin/loginasuser/(:num)',
+ 'SuperAdmin::loginAsUser/$1');
+
+ $routes->resource('announcement');
+ 

@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateFinancesTable extends Migration
+class CreateClientsTable extends Migration
 {
     public function up()
     {
@@ -16,31 +16,31 @@ class CreateFinancesTable extends Migration
             'unsigned' => true,
             'auto_increment' => true,
             ],
-            'type' => [
-            'type' => 'VARCHAR','constraint' => '50',
+            'name'=> [
+            'type' => 'VARCHAR',
+            'constraint' => '100',
             ],
-            'amount'=> [
-            'type' => 'DECIMAL',
-            'constraint' => '10,2',
+            'email' => [
+            'type' => 'VARCHAR',
+            'constraint' => '100',
             ],
-            'description' => [
+            'phone' => [
+            'type' => 'VARCHAR',
+            'constraint' => '15',
+            ],
+            'company' => [
             'type'
-            => 'TEXT',
+            => 'VARCHAR',
+            'constraint' => '100',
+            ],
+            'address' => [
+            'type' => 'TEXT',
+            'null' => true,
+           ],
+            'notes' => [
+            'type' => 'TEXT',
             'null' => true,
             ],
-            'date' => [ 'type' => 'DATE',
-            ],
-            'category' => [
-            'type' => 'VARCHAR',
-            'constraint' => '50',
-            ],
-            'created_by' => [
-            'type' => 'INT',
-            'constraint' => 5,
-            'unsigned' => true,
-            ],
-            'CONSTRAINT FOREIGN KEY (created_by) REFERENCES users(id)',
-
             'created_at' => [
             'type' => 'DATETIME',
             'null' => true,
@@ -55,10 +55,10 @@ class CreateFinancesTable extends Migration
             ],
             ]);
             $this->forge->addKey('id', true);
-            $this->forge->createTable('finances');    }
+            $this->forge->createTable('clients');    }
 
     public function down()
     {
-        $this->forge->dropTable('finances');
+        $this->forge->dropTable('clients');
     }
 }

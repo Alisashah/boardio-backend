@@ -1,12 +1,12 @@
 <?php
  namespace App\Models;
  use CodeIgniter\Model;
- class BrandingModel extends Model
+ class AnnouncementModel extends Model
  {
- protected $table = 'brandings';
+ protected $table = 'announcements';
  protected $primaryKey = 'id';
-protected $allowedFields = ['tenant_id', 'logo',
- 'primary_color', 'secondary_color', 'theme'];
+ protected $allowedFields = ['title', 'message',
+ 'target_audience', 'created_by'];
  protected $useTimestamps = true;
  protected $createdField = 'created_at';
  protected $updatedField = 'updated_at';

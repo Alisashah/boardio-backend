@@ -1,12 +1,13 @@
 <?php
  namespace App\Models;
  use CodeIgniter\Model;
- class BrandingModel extends Model
+ class TicketModel extends Model
  {
- protected $table = 'brandings';
+ protected $table = 'tickets';
  protected $primaryKey = 'id';
-protected $allowedFields = ['tenant_id', 'logo',
- 'primary_color', 'secondary_color', 'theme'];
+ protected $allowedFields = ['user_id', 'title', 'description',
+ 'status', 'type', 'priority', 'created_by', 'assigned_to',
+ 'resolved_at'];
  protected $useTimestamps = true;
  protected $createdField = 'created_at';
  protected $updatedField = 'updated_at';
