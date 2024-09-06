@@ -1,0 +1,74 @@
+ERROR - 2024-08-28 09:00:49 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`boardio`.`employee_cards`, CONSTRAINT `employee_cards_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`)) in C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `employe...', 0)
+#1 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `employe...')
+#2 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `employe...')
+#3 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2516): CodeIgniter\Database\BaseConnection->query('UPDATE `employe...', Array, false)
+#4 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\BaseModel.php(1028): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\Model.php(865): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\boardio-backend\app\Controllers\EmployeeCard.php(58): CodeIgniter\Model->update('1', Array)
+#8 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\EmployeeCard->update('1')
+#9 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmployeeCard))
+#10 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\boardio-backend\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\boardio-backend\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-08-28 09:00:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`boardio`.`employee_cards`, CONSTRAINT `employee_cards_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`))
+[Method: PUT, Route: employeecard/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2516): CodeIgniter\Database\BaseConnection->query('UPDATE `employee_cards` SET `employee_id` = :employee_id:, `card_number` = :card_number:, `issue_date` = :issue_date:, `expiry_date` = :expiry_date:, `updated_at` = :updated_at:
+WHERE `employee_cards`.`id` IN :employee_cards.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\EmployeeCard.php(58): CodeIgniter\Model->update('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EmployeeCard->update('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmployeeCard))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\boardio-backend\\public\\index.php')
+CRITICAL - 2024-08-28 09:00:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`boardio`.`employee_cards`, CONSTRAINT `employee_cards_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `employee_cards` SET `employee_id` = NULL, `card_number` = \'card 1 new\', `issue_date` = \'2024-08-31\', `expiry_date` = \'2024-09-02\', `updated_at` = \'2024-08-28 09:00:49\'
+WHERE `employee_cards`.`id` IN (\'1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `employee_cards` SET `employee_id` = NULL, `card_number` = \'card 1 new\', `issue_date` = \'2024-08-31\', `expiry_date` = \'2024-09-02\', `updated_at` = \'2024-08-28 09:00:49\'
+WHERE `employee_cards`.`id` IN (\'1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2516): CodeIgniter\Database\BaseConnection->query('UPDATE `employee_cards` SET `employee_id` = :employee_id:, `card_number` = :card_number:, `issue_date` = :issue_date:, `expiry_date` = :expiry_date:, `updated_at` = :updated_at:
+WHERE `employee_cards`.`id` IN :employee_cards.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\EmployeeCard.php(58): CodeIgniter\Model->update('1', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EmployeeCard->update('1')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmployeeCard))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\boardio-backend\\public\\index.php')
+CRITICAL - 2024-08-28 09:00:49 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`boardio`.`employee_cards`, CONSTRAINT `employee_cards_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `employee_cards` SET `employee_id` = NULL, `card_number` = \'card 1 new\', `issue_date` = \'2024-08-31\', `expiry_date` = \'2024-09-02\', `updated_at` = \'2024-08-28 09:00:49\'
+WHERE `employee_cards`.`id` IN (\'1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `employee_cards` SET `employee_id` = NULL, `card_number` = \'card 1 new\', `issue_date` = \'2024-08-31\', `expiry_date` = \'2024-09-02\', `updated_at` = \'2024-08-28 09:00:49\'
+WHERE `employee_cards`.`id` IN (\'1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `employee_cards` SET `employee_id` = NULL, `card_number` = \'card 1 new\', `issue_date` = \'2024-08-31\', `expiry_date` = \'2024-09-02\', `updated_at` = \'2024-08-28 09:00:49\'
+WHERE `employee_cards`.`id` IN (\'1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2516): CodeIgniter\Database\BaseConnection->query('UPDATE `employee_cards` SET `employee_id` = :employee_id:, `card_number` = :card_number:, `issue_date` = :issue_date:, `expiry_date` = :expiry_date:, `updated_at` = :updated_at:
+WHERE `employee_cards`.`id` IN :employee_cards.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\EmployeeCard.php(58): CodeIgniter\Model->update('1', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EmployeeCard->update('1')
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmployeeCard))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\boardio-backend\\public\\index.php')
