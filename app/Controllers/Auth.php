@@ -39,8 +39,8 @@
         if ($user && password_verify($password, $user['password']))
         {
             $key = getenv('JWT_SECRET');
-            $issuer = getenv('JWT_ISSUER') ?: 'boardio-backend.vercel.app';  
-$audience = getenv('JWT_AUDIENCE') ?: 'boardio-backend.vercel.app';  
+            $issuer = getenv('JWT_ISSUER') ?: ' boardio-backend-aliz4wssp-boardio.vercel.app';  
+$audience = getenv('JWT_AUDIENCE') ?: ' boardio-backend-aliz4wssp-boardio.vercel.app';  
 
 $payload = [
     'iss' => $issuer,
