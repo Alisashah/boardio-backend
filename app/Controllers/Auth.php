@@ -39,9 +39,12 @@
         if ($user && password_verify($password, $user['password']))
         {
             $key = getenv('JWT_SECRET');
-            $payload = [
-            'iss' => "localhost",
-            'aud' => "localhost",
+            $issuer = getenv('JWT_ISSUER') ?: 'boardio-backend.vercel.app';  
+$audience = getenv('JWT_AUDIENCE') ?: 'boardio-backend.vercel.app';  
+
+$payload = [
+    'iss' => $issuer,
+    'aud' => $audience,
             'iat' => time(),
             'exp' => time() + 3600,
             'sub' => $user['id'],
