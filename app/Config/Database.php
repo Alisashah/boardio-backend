@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => getenv('MYSQLHOST'),
-        'username'     => getenv('MYSQLUSER'),
-        'password'     => getenv('MYSQLPASSWORD'),
-        'database'     => getenv('MYSQLDATABASE'),
+        'hostname'     => "boardio-boardio.e.aivencloud.com", 
+        'username'     => 'avnadmin',
+        'password'     => 'AVNS_Jr7p0oAgreRfvdTZxgY',
+        'database'     => 'defaultdb',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -41,7 +41,7 @@ class Database extends Config
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => 3306,
+        'port'         => 14529,
         'numberNative' => false,
         'dateFormat'   => [
             'date'     => 'Y-m-d',

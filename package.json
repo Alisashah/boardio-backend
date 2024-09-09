@@ -1,4 +1,6 @@
 {
   "dependencies": {
+    "@vercel/build-utils": "^8.3.9"
+
   }
 }
