@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'https://boardio-backend-aliz4wssp-boardio.vercel.app/';
+    public string $baseURL = 'https://boardio-backend.vercel.app/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
