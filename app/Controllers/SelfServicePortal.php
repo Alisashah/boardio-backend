@@ -14,8 +14,7 @@
     }
     public function getDashboard($employee_id = null)
     {
-        $employee = $this->employeeModel->find(1);
-        var_dump($employee);
+        $employee = $this->employeeModel->find($employee_id);
     if (!$employee) {
         return $this->failNotFound('Employee not found');
     }

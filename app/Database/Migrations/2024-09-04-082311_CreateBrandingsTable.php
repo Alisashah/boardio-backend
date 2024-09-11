@@ -8,15 +8,15 @@ class CreateBrandingsTable extends Migration
 {
     public function up()
     {
-            $this->forge->addField([
-            'id' => [
+        $this->forge->addField([
+            'id'  => [
             'type' => 'INT',
-            'constraint' => 5,
-            'unsigned'
+            'constraint'  => 5,
+            'unsigned' => true,
+          
            
+          
            
-           
-            => true,
             'auto_increment' => true,
             ],
             'tenant_id' => [
@@ -26,9 +26,9 @@ class CreateBrandingsTable extends Migration
             'constraint' => 5,
             'unsigned' => true,
             ],
-           
-            'logo' => [
+            'logo'  => [
             'type'
+          
             => 'VARCHAR',
             'constraint' => '255',
             'null'
@@ -48,9 +48,9 @@ class CreateBrandingsTable extends Migration
             'null'
             => true,
             ],
-            'theme' => [
+            'theme'  => [
             'type'
-           
+          
             => 'VARCHAR',
             'constraint' => '20',
             'null'
@@ -73,7 +73,8 @@ class CreateBrandingsTable extends Migration
             ],
             ]);
             $this->forge->addKey('id', true);
-            $this->forge->createTable('brandings');    }
+            $this->forge->createTable('brandings');
+           }
 
     public function down()
     {
