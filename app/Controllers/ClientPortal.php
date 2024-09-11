@@ -5,8 +5,7 @@
  class ClientPortal extends ResourceController
  {
  protected $modelName = 'App\Models\ClientModel';
- protected $format
- = 'json';
+ protected $format = 'json';
  public function getClientProjects($client_id = null)
  {
  // Implement logic to fetch client-specific projects
